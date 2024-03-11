@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <div style="
+    background-image: url('headback1.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    font-family:Microsoft JhengHei; 
+    ">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--
+        <div style="
+        position: fixed;
+        top: 0;
+        background-color: #f8f9fa;"></div>
+        -->
+        
+        <br><br><br><br><br><br>
+        <div align="center" style="font-size: 54pt;" >太陽能光電模組異常偵測</div>
+        <br><br><br><br><br>
+        
+        
+        <title >太陽能光電模組專題報告</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script></div>
+        
+        <style>
+            html,body{
+            margin: 0;
+            padding: 0;
+            }
+            .navbar {
+              overflow: hidden;
+              background-color: #333;
+              position: fixed;
+              top: 0;
+              width: 100%;          
+            }           
+            
+            .navbar a {
+              float: left;
+              display: block;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            .navbar a.right {
+            float: right;
+            margin-right: 20px;
+            }
+            
+            .navbar a:hover {
+              background: #ddd;
+              color: black;
+            }
+            
+            section {
+            padding-top: 70px; /* 調整這個值以適應您的導航欄高度 */
+            }
+
+            .footer {
+            width: 100%;
+            background-color: #f8f9fa;
+            color: black;
+            text-align: left;
+            padding: 10px 0;
+            }
+            </style>
+
+    </head>
+    <!--網頁內容-->
+    <body style="background-color:lightgrey;">
+        <div class="navbar">
+            <a href="final.html"><img src="symbol3.png"  style="width: 20px;height: 20px" alt="太陽能光電模組專題報告"/></a>
+            <a style="pointer-events: none;">2024專題</a>
+            <a href="handmake.html" class="right" >實際操作</a>
+            <a href="#aa5" class="right" >參考文獻</a>
+            <a href="#aa4" class="right" >異常質檢測</a>
+            <a href="#aa3" class="right" >模型簡介</a>
+            <a href="#aa2" class="right">變數介紹</a>
+            <a href="#aa1" class="right" >摘要</a>
+            <a href="javascript:void(0);" onclick="scrollToTop()" class="right">首頁</a>
+          </div>
+          
+          <!--<p style="margin-top:50px;">在這裡添加您的內容...</p>-->
+          
+          <script>
+          function scrollToTop() {
+            window.scrollTo({top:0, behavior: 'smooth'});
+          }
+          </script>
+        <!--<br><br><br>  
+        
+        <li style="margin-left: 50px;margin-bottom: 10px;font-size: 20pt;">
+            <a style="margin-left: 10px;" href="#aa1">摘要</a>
+        </li>
+        <li style="margin-left: 50px;margin-bottom: 10px;font-size: 20pt;">
+        <a style="margin-left: 10px;" href="#aa2">變數介紹</a>
+        </li>
+        <li style="margin-left: 50px;margin-bottom: 10px;font-size: 20pt;">
+        <a style="margin-left: 10px;" href="#aa3">模型簡介</a>
+        </li>
+        <li style="margin-left: 50px;margin-bottom: 10px;font-size: 20pt;">
+        <a style="margin-left: 10px;" href="#aa2">變數介紹</a>
+        </li>
+        <li style="margin-left: 50px;font-size: 20pt;">
+        <a style="margin-left: 10px;" href="#aa2">變數介紹</a>
+        </li>
+-->
+        <br><br><br><br>
+        
+        <section id="aa1">
+            <div  align="center" style="font-size: 30pt;"> 摘要
+            </div>
+      </section>
+        
+      <div style="padding: 10px;;margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;line-height: 50px;">&emsp;&emsp;隨著現代社會「能源」需求的增加
+        ，特別是台灣太陽光發電在再生能源中最具代表。從2017年到2021年，台灣的太陽光發電量增長了15倍以上，凸顯了其在能源市場的重要性。在這樣的背景下，太陽光電模組的維護成為
+        關鍵，尤其是解決「熱斑效應」的問題。熱斑是指太陽光照射之下，發電異常而產生高溫，因此在紅外線熱影像之下，其亮度會變高（如下圖的紅框），常由外部因素，如：灰塵、雨水
+        遮擋，或是內部因素，如：焊接不良。此問題不止影響發電效率也可能造成安全隱患。過去，使用直升機或人工檢查是常見的維護方法，但這些方法既耗時又危險。因此，開發一種有效
+        且安全的「監測方法」用以進行維護，成為太陽光電發展的重要技術挑戰。</div>
+    <img src="head.png" style="display:block; margin:auto;"/>
+    <br><br><br><br>
+    
+    <section id="aa2">
+        <div  align="center" style="font-size: 30pt;margin-bottom: 20px;"> 變數介紹
+        </div>
+    </li>
+</section>
+<br><br><br>
+  <div style="width: 100%;">
+    <div style="float: left; width: 55%;">
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">local：大圖片編號(共1~1009，已刪除184:原圖過暗、956:資料太少，不足分析)</div>
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">bigx：整張圖片有擷取的大片太陽能板x軸排序編號</div>
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">bigx：整張圖片有擷取的大片太陽能板x軸排序編號</div>
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">bigy：整張圖片有擷取的大片太陽能板y軸排序編號</div>
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">x：每片太陽能板擷取的小格太陽能板以x軸排序編號</div>
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">y：每片太陽能板擷取的小格太陽能板以y軸排序編號</div>
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">light：每一小格的平均亮度</div>
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">fx：由bigx、x所組成的變數</div>
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">fy：由bigy、y所組成的變數</div>
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">label：是否壞掉(0：正常，1：異常)</div>
+    <div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;">fxx: fx的平方項    fyy: fy的平方項     fxy: fx*fy項</div>
+        </div>
+    <div style="float: right; width: 45%;">
+        <img src="ex.png" alt="範例" style=" height: 550px;">
+    </div>
+</div>
+
+<div style="clear: both;"></div>
+</div>
+<br><br><br><br>
+
+<section id="aa3">
+    <div  align="center" style="font-size: 30pt;margin-bottom: 20px;"> 模型簡介
+    </div>
+</section>
+<br><br><br>
+
+<h1 style="padding: 10px;margin-left: 100px;">(一) 迴歸分析(Regression analysis):</h1>
+<div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    使用迴歸分析建立模型是最常見的統計分析方法。本專題預期使用3個解釋變數建立具有區集(照片編號)的多元迴歸模型。若線性迴歸模型解釋能力不佳，將進行變數轉換，以增進模型的解釋能力。</div>
+
+<h1 style="padding: 10px;margin-left: 100px;">(二) XGBoost(Extreme Gradient Boosting):</h1>
+<div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    是以 Gradient Boosting 為基礎再加上特徵隨機採樣等技巧，其主要思路是將多個決策樹組合而成的模型，屬於一種高度複雜演算法且準確率高的模型。</div>
+
+<h1 style="padding: 10px;margin-left: 100px;">(三) 移動平均(Moving Average)：</h1>
+<div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    透過整個數據集裡不同樣本的一系列平均數來分析數據點的計算方法，可看趨勢或者是差異性。[<a href="#aa5">1~4</a>]</div>
+<h1 style="padding: 10px;margin-left: 100px;">(四) 類神經網路(artificial neural network, ANNs)：</h1>
+<div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    是一種模仿生物內的中樞神經系統結構的數學模型，由大量的神經元連結進行運算，主要是以接收外部的訊息來變更內部的結構，以此來建立複雜的非線性關係模型。</div>
+
+<br><br><br><br>
+
+<section id="aa4">
+    <div  align="center" style="font-size: 30pt;margin-bottom: 20px;">異常質檢測<span style="font-size: 18pt">[<a href="#aa5">5</a>]
+    </span></div>
+</section>
+<br><br><br>
+<h1 style="padding: 10px;margin-left: 100px;">(一) LOF局部離群因子(Local Outlier Factor):</h1>
+<div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    LOF評估每個數據點相對於其周圍鄰近數據點的密度。一個正常的數據點應該被其鄰近的點包圍，而異常值則可能位於密度較低的區域。LOF通過比較每個數據點的局部密度與其鄰近點的局部密度，來識別潛在的異常值。</div>
+<h1 style="padding: 10px;margin-left: 100px;">(二) k-平均演算法(K-means)：</h1>
+<div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    非監督式學習的分群演算法，通常在資料分佈常態時效果較好。隨機取k個點作為起始點，計算每個資料與起始點距離的平方最小的做為分組，然後以每個分組的中心（平均）為新的起始點後不斷的重複計算，直到收斂後得到最後的分組。[<a href="#aa5">6~9</a>]</div>
+<h1 style="padding: 10px;margin-left: 100px;">(三) 統計離群值(Outlier)： </h1>
+<div style="padding: 10px;margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    與其他數據有顯著差異，稱為離群值，利用Q1與Q3所計算出IQR，大於Q3+1.5*IQR或小於Q1-1.5*IQR的數據。[<a href="#aa5">10</a>]</div>
+<br><br><br><br>
+
+<section id="aa5">
+    <div  align="center" style="font-size: 30pt;margin-bottom: 20px;">參考文獻</div>
+</section>
+<br><br><br>
+<ol>
+<li style="margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;"><a href="https://zh.wikipedia.org/zh-tw/%E7%A7%BB%E5%8B%95%E5%B9%B3%E5%9D%87">https://zh.wikipedia.org/zh-tw/%E7%A7%BB%E5%8B%95%E5%B9%B3%E5%9D%87</a>&emsp;(維基百科:移動平均概念)</li>
+<li style="margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;"><a href="https://www.ig.com/en/glossary-trading-terms/moving-average-definition">https://www.ig.com/en/glossary-trading-terms/moving-average-definition</a>&emsp;(MA定義)</li>
+<li style="margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;"><a href="https://www.investopedia.com/terms/m/movingaverage.asp">https://www.investopedia.com/terms/m/movingaverage.asp</a>&emsp;(MA使用實例參考)</li>
+<li style="margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;"><a href="https://fxlittw.com/what-is-moving-average">https://fxlittw.com/what-is-moving-average</a>&emsp;(移動平均線MA:指標介紹)</li>
+<li style="margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;"><a href="https://zh.wikipedia.org/zh-tw/%E5%BC%82%E5%B8%B8%E5%80%BC">https://zh.wikipedia.org/zh-tw/%E5%BC%82%E5%B8%B8%E5%80%BC</a>&emsp;(維基百科:異常值概念)</li>
+<li style="margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;"><a href="https://neptune.ai/blog/k-means-clustering">https://neptune.ai/blog/k-means-clustering</a>&emsp;(k-means分群:程式碼參考&概念)</li>
+<li style="margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;"><a href="https://ithelp.ithome.com.tw/articles/10209058">https://ithelp.ithome.com.tw/articles/10209058</a>&emsp;(k-means分群演算法:程式碼參考)</li>
+<li style="margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;"><a href="https://rstudio-pubs-static.s3.amazonaws.com/378455_ddbefe5075b941d1a1f6a1bf9cf1e85f.html">https://rstudio-pubs-static.s3.amazonaws.com/378455_ddbefe5075b941d1a1f6a1bf9cf1e85f.html</a>&emsp;(k-means在R使用:模型程式碼參考)</li>
+<li style="margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;"><a href="https://chih-sheng-huang821.medium.com/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E9%9B%86%E7%BE%A4%E5%88%86%E6%9E%90-k-means-clustering-e608a7fe1b43">https://chih-sheng-huang821.medium.com/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E9%9B%86%E7%BE%A4%E5%88%86%E6%9E%90-k-means-clustering-e608a7fe1b43</a>&emsp;(k-means集群分析:概念圖解)</li>
+<li style="margin-left: 100px;font-size: 18pt;margin-right: 100px;margin-bottom: 20px;"><a href="https://www.gss.com.tw/blog/%E9%9B%A2%E7%BE%A4%E5%80%BC%E4%B9%8B%E7%B0%A1%E4%BB%8B">https://www.gss.com.tw/blog/%E9%9B%A2%E7%BE%A4%E5%80%BC%E4%B9%8B%E7%B0%A1%E4%BB%8B</a>&emsp;(離群值簡介)</li>
+</ol>
+
+<br><br><br>
+<div style="text-align: center;">
+    <a href="handmake.html" style="font-size: 30pt; margin-bottom: 20px;">進入實際操作</a>
+  </div>
+  <br><br><br>
+  <div class="footer">
+    <p style="margin-left: 100px;">版權所有 © 2024</p>
+  </div>
+    <!--<a href="final.html"><div id="return-top" style="position: fixed;
+  right: 10px;
+  bottom: 40px;
+  background: rgba(204,200,255,0.6);
+  border-radius: 15px;
+  cursor: pointer;
+  display: none;
+  width: 60px;
+  height: 18px;"
+  >
+    <img src="arrow.png" width="60" id="img">
+    <div style="width:60px;margin:auto;">
+        <p id='font' style="font-size:20px;margin-left:10px;display:none;">返回<br>頂部</p>
+    </div>
+</div></a>-->
+
+    </body>
+</html>
