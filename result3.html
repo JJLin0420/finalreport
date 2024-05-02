@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+  <head>
+    
+    <meta charset="utf-8" />
+    <title>預測結果</title>
+    <style>
+        html,body{
+        margin: 0;
+        padding: 0;
+        }
+        .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;          
+        }           
+    
+        .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+        .navbar a.right {
+        float: right;
+        margin-right: 20px;
+        }
+    
+        .navbar a:hover {
+        background: #ddd;
+        color: black;
+        }
+    
+        section {
+        padding-top: 70px; /* 調整這個值以適應您的導航欄高度 */
+        }
+    
+        .footer {
+                width: 100%;
+                background-color: #f8f9fa;
+                color: black;
+                text-align: left;
+                padding: 10px 0;
+                
+            }
+        table {
+        transform: scale(1.8);
+
+         }   
+         .dropdown {
+                overflow: hidden;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .dropdown .dropbtn1 {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: black;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+            .dropdown-content {
+                display: none;
+                position: fixed;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 9999;
+                top: 50px;
+            }
+
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .right {
+                float: right;
+            }
+
+            .image-container img {
+                width: 100px;
+                height: auto;
+                display: inline-block;
+            }
+
+            .dropdown .dropbtn:hover + .dropdown-content,
+            .dropdown .dropdown-content:hover {
+                display: block;
+            }
+
+            .dropdown-content .dropdown:hover .dropbtn + .dropdown-content {
+                display: block;
+            }
+
+            .dropdown-content .dropdown .dropdown-content {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: 115px;
+                z-index: 1;
+            }
+
+            .dropdown-content .dropdown:hover .dropdown-content {
+                display: block;
+            }   
+            .dropdown-content .dropdown .dropdown-content .sub-dropdown {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: 113px;
+                z-index: 1;
+            }
+
+            .dropdown-content .dropdown .dropdown-content:hover .sub-dropdown {
+                display: block;
+            }
+
+            td{text-align: center;}
+  </style>
+     <div style="
+     background-image: url('headback1.gif');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+     opacity: 0.8;
+     font-family:Microsoft JhengHei; 
+     ">
+         <meta charset="UTF-8"/>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
+         <br><br><br><br><br><br>
+         <div align="center" style="font-size: 48pt ;color:white; background-color: rgba(31, 96, 188, 0.639) ;margin-left: 40%;margin-right: 40%; " >預測結果</div>
+
+            <br><br><br><br><br>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="script.js"></script></div>
+    <link rel="stylesheet" type="text/css" href="result.css">
+   
+  </head>
+  <body style="background-color:#E8E8D0">
+    <br><br><br><br>
+
+    <div class="navbar">
+        <a href="index.html"><img src="symbol3.png"  style="width: 20px;height: 20px" alt="太陽能光電模組專題報告"/></a>
+        <a style="pointer-events: none;">2024專題</a>
+        <a href="handmake.html" class="right">預測結果</a>
+        <a href="index.html#aa14" class="right">參考文獻</a>
+        <a href="index.html#aa13" class="right">結論與討論</a>
+        <div class="dropdown right">
+            <a href="index.html#aa2" class="dropbtn">研究方法及步驟</a>
+            <div class="dropdown-content">
+                <a href="index.html#aa3">影像前處理</a>
+                <a href="index.html#aa4">DataFrame生成變數</a>
+                <div class="dropdown">
+                <a href="index.html#aa15" class="dropbtn1">變數調整與生成殘差</a>
+                    <div class="dropdown-content">
+                <a href="index.html#aa16">1.&nbsp;調亮度的對比度</a>
+                <a href="index.html#aa6">2.&nbsp;計算殘差的模型介紹</a>
+            </div>
+        </div>
+                <div class="dropdown">
+                    <a href="index.html#aa5" class="dropbtn1">建立模型與預測</a>
+                    <div class="dropdown-content">
+                        <a href="index.html#aa7">1.&nbsp;異常值檢測的模型介紹</a>
+                        <a href="index.html#aa8">2.&nbsp;單一模型</a>
+                        <div class="dropdown">
+                            <a href="index.html#aa9" class="dropbtn1">3.&nbsp;複合模型</a>
+                            <div class="dropdown-content sub-dropdown">
+                                <a href="index.html#aa10">方案一</a>
+                                <a href="index.html#aa11">方案二</a>
+                            </div>
+                        </div>
+                        <a href="index.html#aa12">4.&nbsp;各模型最佳結果</a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <a href="index.html#aa1" class="right">研究動機與問題</a>
+        <a href="index.html" class="right">首頁</a>
+    </div>
+<br>
+    <div style="width: 100%;">
+        <div style="float: right; width: 45%;">
+            <table style="padding: 10px ;margin-left: 30%; margin-top: 19%;z-index: 0.5;" border="1" width="50px" cellpadding="5">
+                <tr>
+                    <td>Result:</td>
+                </tr>
+                <tr>
+                    <td>Local:</td>
+                    <td colspan="3" align="center">177</td>
+                </tr>
+                <tr>
+                    <td>Bigy:</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+
+                </tr>
+                <tr>
+                    <td>Bigx:</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>4</td>
+
+                </tr>
+                <tr>
+                    <td>x:</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>y:</td>
+                    <td>2</td>
+                    <td>9</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>label:</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>pred:</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+
+                </tr>
+            </table>
+        <!--<div style="font-size: 24pt;margin-top: 100px;padding: 10px;"><span style="color:red;">紅</span>框=>有問題未抓出</div>
+        <div style="font-size: 24pt;padding: 10px;"><span style="color:green;">綠</span>框=>可能快壞但未達到異常標準有抓出</div>-->
+            
+            </div>
+        <div style="float: left; width: 55%;">
+            <img src="177.png" alt="範例" style=" height: 550px; margin-left: 100px;">
+        </div>
+    </div>
+</div>
+<div style="clear: both;"></div>
+<br><br><br>
+    <div class="footer">
+        <p style="margin-left: 100px;">版權所有 © 2024</p>
+      </div>    
+</body>
+
+</html>

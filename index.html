@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <div style="
+    background-image: url('headback1.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    font-family:Microsoft JhengHei;
+    height: 750px; 
+    ">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div align="center" style="font-size: 48pt ;color:white; background-color: rgba(31, 96, 188, 0.639) ;margin-left:32%;margin-right: 32%; ;" >資料探勘技術</div>
+        <div align="center" style="font-size: 48pt ;color:white; background-color: rgba(31, 96, 188, 0.639) ;margin-left: 10%;margin-right: 10%; ;" >用於太陽光電模組的熱影像缺陷辨識</div>
+        <br><br><br><br><br>
+        
+        
+        <title  >太陽能光電模組專題報告</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script></div>
+        
+        <style>
+            html,body{
+            margin: 0;
+            padding: 0;
+            }
+            .navbar {
+              overflow: hidden;
+              background-color: #333;
+              position: fixed;
+              top: 0;
+              width: 100%;          
+            }           
+            
+            .navbar a {
+              float: left;
+              display: block;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            
+            .navbar a.right {
+            float: right;
+            margin-right: 20px;
+            }
+            
+            .navbar a:hover {
+              background: #ddd;
+              color: black;
+            }
+            
+            section {
+            padding-top: 70px; 
+            }
+
+            .footer {
+            width: 100%;
+            background-color: #f8f9fa;
+            color: black;
+            text-align: left;
+            padding: 10px 0;
+            }
+            
+            .color-block {
+            width: 100px;
+            height: 650px;
+            background-color:	antiquewhite;
+            }
+            .color-block2{
+            width: 100px;
+            height: 650px;
+            background-color:	#FFECEC;
+            }
+            
+            .dropdown {
+                overflow: hidden;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .dropdown .dropbtn1 {
+                font-size: 16px;  
+                border: none;
+                outline: none;
+                color: black;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+            .dropdown-content {
+                display: none;
+                position: fixed;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 9999;
+                top: 50px;
+            }
+
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .right {
+                float: right;
+            }
+
+            .image-container img {
+                width: 100px;
+                height: auto;
+                display: inline-block;
+            }
+
+            .dropdown .dropbtn:hover + .dropdown-content,
+            .dropdown .dropdown-content:hover {
+                display: block;
+            }
+
+            .dropdown-content .dropdown:hover .dropbtn + .dropdown-content {
+                display: block;
+            }
+
+            .dropdown-content .dropdown .dropdown-content {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: 115px;
+                z-index: 1;
+            }
+
+            .dropdown-content .dropdown:hover .dropdown-content {
+                display: block;
+            }   
+            .dropdown-content .dropdown .dropdown-content .sub-dropdown {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: 113px;
+                z-index: 1;
+            }
+
+            .dropdown-content .dropdown .dropdown-content:hover .sub-dropdown {
+                display: block;
+            }
+
+            .inside {
+                padding: 10px;margin-left: 250px;font-size: 18pt;margin-right: 250px;margin-bottom: 20px;line-height: 50px;
+            }
+
+            .G {
+                font-size: 26pt;font-weight: bold; padding: 10px;margin-left: 250px;
+            }            
+            .SG {
+                font-size: 24pt;margin-bottom: 20px;margin-left: 250px;padding: 10px;
+            }
+            .SSG {
+                font-size: 22pt;margin-bottom: 20px;margin-left: 250px;padding: 10px;
+            }
+            
+            li{white-space: normal;}
+            </style>
+    </head>
+    <body style="background-color:white;">
+        <div class="navbar" style="width: 100%;">
+            <a href="index.html"><img src="symbol3.png"  style="width: 20px;height: 20px" alt="太陽能光電模組專題報告"/></a>
+            <a style="pointer-events: none;">2024專題</a>
+            <a href="handmake.html" class="right">預測結果</a>
+            <a href="#aa14" class="right">參考文獻</a>
+            <a href="#aa13" class="right">結論與討論</a>
+            <div class="dropdown right">
+                <a href="#aa2" class="dropbtn">研究方法及步驟</a>
+                <div class="dropdown-content">
+                    <a href="#aa3">影像前處理</a>
+                    <a href="#aa4">DataFrame生成變數</a>
+                    <div class="dropdown">
+                    <a href="#aa15" class="dropbtn1">變數調整與生成殘差</a>
+                        <div class="dropdown-content">
+                    <a href="#aa16">1.&nbsp;調亮度的對比度</a>
+                    <a href="#aa6">2.&nbsp;計算殘差的模型介紹</a>
+                </div>
+            </div>
+                    <div class="dropdown">
+                        <a href="#aa5" class="dropbtn1">建立模型與預測</a>
+                        <div class="dropdown-content">
+                            <a href="#aa7">1.&nbsp;異常值檢測的模型介紹</a>
+                            <a href="#aa8">2.&nbsp;單一模型</a>
+                            <div class="dropdown">
+                                <a href="#aa9" class="dropbtn1">3.&nbsp;複合模型</a>
+                                <div class="dropdown-content sub-dropdown">
+                                    <a href="#aa10">方案一</a>
+                                    <a href="#aa11">方案二</a>
+                                </div>
+                            </div>
+                            <a href="#aa12">4.&nbsp;各模型最佳結果</a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <a href="#aa1" class="right">研究動機與問題</a>
+            <a href="javascript:void(0);" onclick="scrollToTop()" class="right">首頁</a>
+        </div>
+          <script>
+          function scrollToTop() {
+            window.scrollTo({top:0, behavior: 'smooth'});
+          }
+          </script>
+  
+        <section id="aa1" >
+            <div  align="center" style="font-size: 32pt;color: lightcoral;"> 研究動機與問題
+            </div>
+            <br>
+      </section>
+<div>
+    <div style="padding: 10px;;margin-left: 250px;font-size: 18pt;margin-right: 250px;margin-bottom: 20px;line-height: 50px;">&emsp;&emsp;隨著現代社會「能源」需求的增加，特別是台灣太陽光發電在再生能源中最具代表。從2017年到2022年，台灣的太陽光發電量增長了15倍以上，凸顯了其在能源市場的重要性。在這樣的背景下，太陽光電模組的維護成為關鍵，尤其是解決「熱斑效應」的問題。熱斑是指太陽光照射之下，發電異常而產生高溫，因此在紅外線熱影像之下，其亮度會變高，常由外部因素，如：灰塵、雨水遮擋，或是內部因素，如：焊接不良。此問題不止影響發電效率也可能造成安全隱患。過去，使用直升機或人工檢查是常見的維護方法，但這些方法既耗時又危險。因此，開發一種有效且安全的「監測方法」用以進行維護，成為太陽光電發展的重要技術挑戰，在此專題中主要研究的是預測由內部因素所造成的熱班問題。[<a href="#aa14">20~21</a>]</div>
+        
+    
+        <img src="head.png" style="display:block; margin:auto;"/>
+        <div align="center" style="font-size: 14pt;">圖一</div> 
+
+        <br><br><br></div>
+   
+    <section id="aa2" style="background-color: #E8E8D0;">
+        <div  align="center" style="font-size: 32pt;color: lightcoral;"> 研究方法及步驟
+            <br>
+        </div>       
+  </section>
+  <section id="aa3" style="background-color: #E8E8D0;"><span class="G" style="color: #009100;">(一)&nbsp;影像前處理</span><br> <br> <br><br></section> 
+  <div style="background-color: #E8E8D0;">
+  <div  style="font-size: 24pt;margin-bottom: 20px;margin-left: 250px;padding: 10px;"> 1.&nbsp;影像灰階化</div>
+  <div style="padding: 10px;;margin-left: 250px;font-size: 18pt;margin-right: 250px;margin-bottom: 20px;line-height: 50px;">&emsp;&emsp;因為原影像為紅外線圖，此圖內的像素分別是由RGB三原色的數值矩陣(1×3的矩陣)組成，這樣在做後續的迴歸模型無法簡單建立，會需要考慮的資訊過於複雜，所以使用OpenCV將影像轉為灰階後，每塊圖片內的像素分別代表為「1」數值，其數值會在0~255之間，0代表黑色，255代表白色，這樣就會較好建立模型。[<a href="#aa14">19</a>]
+<br></div>
+<img src="graylize.jpg" style="display:block; margin:auto;width:40%; height:auto;"/>
+<div align="center" style="font-size: 14pt;">圖二</div> <br></div><br>
+
+<div style="font-size: 24pt;margin-bottom: 20px;margin-left: 250px;"> 2.&nbsp;切割圖片</div>
+<div style="padding: 10px;;margin-left: 250px;font-size: 18pt;margin-right: 250px;margin-bottom: 20px;line-height: 50px;">&emsp;&emsp;找到一條由多個太陽能光電板的邊框所連接成的直線，用Python透過將影像旋轉拉正後再以太陽能光電模組邊框的座標分割圖片，並找到每塊太陽能光電板內部的邊線的座標，再做切割並將切割後的相對座標位置進行標註。
+<br></div>
+<img src="cut.jpg" style="display:block; margin:auto;"/>
+<div align="center" style="font-size: 14pt;">圖三</div><br>
+
+<div style="background-color: #E8E8D0;"><br> 
+
+<div  style="font-size: 24pt;margin-bottom: 20px;margin-left: 250px;">3.&nbsp;計算每塊小影像的像素平均亮度</div>
+  <div style="padding: 10px;;margin-left: 250px;font-size: 18pt;margin-right: 250px;margin-bottom: 20px;line-height: 50px;">&emsp;&emsp;因為切割後的影像是由好幾個像素點組合而成，所以我們以所有像素點的平均來表示每一塊影像所代表的平均亮度。
+<br></div>
+<img src="meanlight.png" style="display:block; margin:auto;width:50%; height:auto;"/>
+<div align="center" style="font-size: 14pt;">圖四</div> <br><br><br></div>
+
+
+<div style="background-color: white ;"><br>
+<section id="aa4"><div class="G" style="color: #009100;">(二)&nbsp;DataFrame生成變數</div></section> <br> <br> <br><br>
+
+  <!--<div style="font-size: 2em;font-weight: bold; padding: 10px;margin-left: 100px;">(一) 影像前處理</div>-->
+
+
+  <span class="SG">1.&nbsp;變數介紹</span>
+
+  <div class="inside">&emsp;&emsp;同時記錄每塊影像切割前編號與切割後的相對位置，利用相對位置計算出絕對位置，並將各項數據合併成一個DataFrame。
+    <br></div>
+
+  <div style="width: 100%;" >
+    <div style="float: left; width: 57%;">
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">local：大圖片編號(共1~1009，已刪除184:原圖過暗、956:資料太少，不足分析)</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">bigx：整張圖片有擷取的大片太陽能板x軸排序編號</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">bigx：整張圖片有擷取的大片太陽能板x軸排序編號</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">bigy：整張圖片有擷取的大片太陽能板y軸排序編號</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">x：每片太陽能板擷取的小格太陽能板以x軸排序編號</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">y：每片太陽能板擷取的小格太陽能板以y軸排序編號</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">fx：由bigx、x所組成的變數</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">fy：由bigy、y所組成的變數</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">------上述以(圖五)為例------</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">light：每一小格的平均亮度</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">new_light：每一小格對比度調整後的平均亮度</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">label：是否壞掉(0：正常，1：異常)</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">fxx：fx的平方項</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">fyy：fy的平方項</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">fxy：fx*fy項</div>
+    <!--<div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">dark:影像異常問題(0：正常情況的異常，1：異常情況的異常)(圖六)</div>
+    <div style="padding: 5px;margin-left: 250px;font-size: 16pt;margin-right: 100px;">look:整張圖中是否有直排異常(0：無，1：有)(圖七)</div>-->
+    <br>
+
+
+        </div>
+    <div style="float: right; width: 43%;">
+        <img src="ex1.png" alt="範例" style= " height: 300px;margin-top: 10px;">
+    <div style="padding: 5px;font-size: 16pt;">bigx : 1&nbsp;&nbsp;bigy : 1&nbsp;&nbsp;x : 2&nbsp;&nbsp;y : 1&nbsp;&nbsp;fx : 2&nbsp;&nbsp;fy : 1</div>
+    <div style="padding: 5px;margin-left: 160px;font-size: 18pt;"><span style="font-size: 14pt;">圖五</span></div>
+        <!--<img src="limit.png" alt="範例" style= " height: 300px;margin-top: 10px;">
+        <img src="line.png" alt="範例" style= " height: 300px;margin-top: 10px;">
+        <div style="padding: 5px;margin-left: 20px;font-size: 14pt;">&nbsp;圖六&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;圖七</div>
+        --><br><br><br>
+    </div>
+</div>
+<br>
+<br><br>
+<div style="clear: both;"></div>
+</div>
+
+<div style="background-color: #E8E8D0;"><br><br>
+<span class="SG">2.&nbsp;影像異常問題的種類</span>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    類型一是整片太陽能板中一小片整特別亮的異常，類型二是整排(或連續三小片)過亮的異常，類型三是整片太陽能板中一小片只有某個小點過亮。</div>
+<div><br><br>
+    <img src="no1.png" alt="Image 1" style="margin-left: 22% ;margin-right: 10%;height: 20%;width: 100px;">
+    <img src="no2.png" alt="Image 2" style="margin-left: 5% ;margin-right: 5%;height: 20%;width: 100px;">
+    <img src="no3.png" alt="Image 3" style="margin-left: 10% ;margin-right: 20%;height: 22%;width: 105px;">
+</div>
+    <div style="font-size: 14pt;"><span style="margin-left: 22%;margin-right: 10%;font-size: 14pt;">類型一(圖八)</span>
+    <span style="margin-left: 4.3% ;margin-right: 15%;font-size: 14pt;">類型二(圖九)</span>類型三(圖十)</div><br><br>
+</div>
+</div>
+
+<section id="aa15"><div class="G" style="color: #009100;">(三)&nbsp;變數調整與生成殘差</div></section>
+<section id="aa16"><span class="SG">1.&nbsp;調亮度的對比度</span></section>
+
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+將亮度較高的點與其餘點的差異放大，使其更加明，我們依照每張local去做亮度的調整，將所有亮度取平方然後再除上其local中Q3的數值，也就是我們將75%light的資料變小，25%light的資料變大。</div>
+<div style="width: 100%;" >
+    <div style="float: left; width: 50%;">
+        <img src="box.jpg" style="display:block; margin:auto;width:60%; height:auto;margin-left: 38%;"/><div style="font-size: 14pt;margin-left: 54%;">圖十一:調整前後的盒型圖</div></div>
+    <div style="float: right; width:50%;">
+        <img src="dif.png" style="display:block; margin:auto;width:70%; height:auto;margin-right: 30%;"/><div  style="font-size: 14pt;margin-left: 3%;">圖十二:黃框為原始亮度，紅框為調整後的亮度數值</div>
+    </div></div>
+<div style="clear: both;"></div>
+<br><br>
+<div style="background-color: #E8E8D0;">
+<section id="aa6"><span class="SG">2.&nbsp;計算殘差的模型介紹</span></section>
+<br><br>
+<div>
+<!--<span style="font-size: 2em;font-weight: bold; padding: 10px;margin-left: 100px;">(一) 迴歸分析(Regression analysis):</span>-->
+<div  class="SSG">I.&nbsp;迴歸分析(Regression analysis)</div>
+
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    使用迴歸分析建立模型是最常見的統計分析方法。本專題預期使用3個解釋變數建立具有區集(照片編號)的多元迴歸模型。若線性迴歸模型解釋能力不佳，將進行變數轉換，以增進模型的解釋能力。</div>
+
+<div  class="SSG">II.&nbsp;XGBoost(Extreme Gradient Boosting)</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    是以 Gradient Boosting 為基礎再加上特徵隨機採樣等技巧，其主要思路是將多個決策樹組合而成的模型，屬於一種高度複雜演算法且準確率高的模型。[<a href="#aa14">13~14</a>]</div>
+
+<div class="SSG">III.&nbsp;移動平均(Moving Average)</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    透過整個數據集裡不同樣本的平均數來分析數據點的計算方法，可看趨勢或者是差異性。[<a href="#aa14">1~4</a>]</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        我們使用了兩種計算方法:</div>
+    </div>
+    <img src="pic1.jpg" style="display:block; margin:auto;width:40%; height:auto;"/>
+    <div align="center" style="padding: 10px;margin-left: 100px;font-size: 14pt;margin-right: 100px;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    方法一&uarr;是依周圍的亮度取平均/中位數。(圖十三)</div>
+    <img src="pic2.jpg" style="display:block; margin:auto;width:40%; height:auto;"/>
+    <div align="center" style="padding: 10px;margin-left: 100px;font-size: 14pt;margin-right: 100px;margin-bottom: 20px;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    方法二&uarr;是依上下至多三格的亮度取平均。(圖十四)</div><br><br>
+<div  class="SSG">IV.&nbsp;移動中位數(Moving Movmedian)</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    透過整個數據集裡不同樣本的中位數來分析數據點的計算方法，可看趨勢或者是差異性，計算方法跟移動平均的方法一(圖十三)一樣，只是將取平均數改為取中位數。
+</div>
+<br>
+</div>
+<section id="aa5"><div class="G" style="color: #009100;">(四)&nbsp;建立模型與預測</div></section>
+
+<section id="aa7"><span class="SG">1.&nbsp;異常值檢測的模型介紹[<a href="#aa14">5</a>]</span></section><br>
+<div class="SSG">I.&nbsp;LOF局部離群因子(Local Outlier Factor)</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    LOF評估每個數據點相對於其周圍鄰近數據點的密度。一個正常的數據點應該被其鄰近的點包圍，而異常值則可能位於密度較低的區域。LOF通過比較每個數據點的局部密度與其鄰近點的局部密度，來識別潛在的異常值。</div>
+<img src="lof.png" style="display:block; margin:auto;"/><div align="center" style="font-size: 14pt;">圖十五</div><br><br>
+<div style="padding: 10px;margin-left: 250px;font-size: 18pt;margin-right: 100px;line-height: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+k是用於計算局部異常因子的所取的最靠近其計算點數量</div>
+<div style="padding: 10px;margin-left: 250px;font-size: 18pt;margin-right: 100px;line-height: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lrd_k(p):p點的局部可達密度</div>
+<div style="padding: 10px;margin-left: 250px;font-size: 18pt;margin-right: 100px;line-height: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    LOF_k(p) &lt; 1 : p點的局部密度高於周遭其他區域的密度 </div>
+<div style="padding: 10px;margin-left: 250px;font-size: 18pt;margin-right: 100px;line-height: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+LOF_k(p) = 1 : p點的局部密度接近周遭其他區域的密度(也就他們可能屬於同一群)</div>
+<div style="padding: 10px;margin-left: 250px;font-size: 18pt;margin-right: 100px;line-height: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+LOF_k(p) > 1 : p點的局部密度低於周遭其他區域的密度(也就是他可能就是異常值)</div>
+    <br><br>
+<div class="SSG">II.&nbsp;k-平均演算法(K-means)</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    非監督式學習的分群演算法，通常在資料分佈常態時效果較好。隨機取k個點作為起始點，計算每個資料與起始點距離的平方最小的做為分組，然後以每個分組的中心（平均）為新的起始點後不斷的重複計算，直到收斂後得到最後的分組。[<a href="#aa14">6~9</a>]</div>
+    <br><br>
+
+<div  class="SSG">III.&nbsp;ROC+統計離群值(Outlier)</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    統計離群：Q3+1.5*IQR，在我們研究中因1.5倍算出的界線太高，所以利用ROC界線推導得出最終倍率。[<a href="#aa14">10</a>]</div>
+    <br><br>
+
+<div  class="SSG">IV.&nbsp;孤立森林(Isolation Forest)</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+原理類似於一片森林中找一顆與其他樹不同的樹。通過建立多棵決策樹，將數據進行分割，標示出相對於其他樹較為孤立的樣本來判斷離群值。[<a href="#aa14">16</a>]</div>
+
+<div style="width: 100%;" >
+    <div style="float: left; width: 50%;">
+<img src="Is.png" style="display:block; margin-left: 40% ; width:50%; height:auto;"/><div  style="font-size: 14pt;margin-left: 470px;">圖十六</div>
+<div style="font-size: 18pt;margin-left: 250px;">其中：</div>
+<div style="font-size: 18pt;margin-left: 250px;">h(x)：為樣本在iTree上的PathLength</div>
+<div style="font-size: 18pt;margin-left: 250px;">E(h(x))：為樣本在t棵iTree的PathLength的平均數</div>
+<div style="font-size: 18pt;margin-left: 250px;">c(n) : 為n個樣本建立平均路徑長度</div>
+
+<div style="margin-left: 250px;font-size: 18pt;line-height: 30px;">基本條件:</div>
+<div style="margin-left: 250px;font-size: 18pt;line-height: 30px;">
+    s(x,n)= 接近1 : 路徑長度短，數據點容易被孤立
+</div>
+<div style="margin-left: 250px;font-size: 18pt;line-height: 30px;">
+    s(x,n)= 小於0.5 : 路徑長度長，得到一個正常點</div>
+<div style="margin-left: 250px;font-size: 18pt;line-height: 30px;">Python:</div>
+<div style="margin-left: 250px;font-size: 18pt;line-height: 30px;">
+    負的為容易被孤立，正的為正常點</div><br><br>
+</div>
+</div>
+    <div style="float: right; width: 50%;">
+        <img src="if4.png" style="display:block; margin-left: 10% ; width:40%; height:auto;"/><div style="font-size: 14pt;margin-left: 200px;">圖十七</div></div>
+
+    </div></div>
+<div style="clear: both;"></div>
+<br>
+
+<div style="background-color: #E8E8D0;">
+<section id="aa8"><span class="SG">2.&nbsp;單一模型</span></section><br><br><br>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    將以上模型殘差跟異常值檢測一對一，共會有40個結果(對比度調整與未調整的資料各20個結果)。</div>
+    <div style="width: 100%;" >
+        <div style="float: left; width: 50%;">
+    <img src="kmeans3.png" style="display:block; margin-left: 33%;width:65%; height:auto;"/><div  style="font-size: 14pt;margin-left: 33%;">k-平均演算法 K-means(圖十八)</div></div>
+    
+
+        <div style="float: right; width: 50%;">
+    <img src="lof3.png" style="display:block; margin-right: 33%;width:65%; height:auto;"/><div  style="font-size: 14pt;margin-left: 0%;">局部離群因子 LOF(圖十九)</div>
+        </div></div>
+    <div style="clear: both;"></div>
+    <br>
+
+    <div style="width: 100%;" >
+        <div style="float: left; width: 50%;">
+    <img src="if3.png" style="display:block; margin-left: 33%;width:65%; height:auto;"/><div style="font-size: 14pt;margin-left: 33%;">孤立森林 Isolation Forest(圖二十)</div></div>
+    
+
+        <div style="float: right; width: 50%;">
+    <img src="out3.png" style="display:block; margin-right: 33%;width:65%; height:auto;"/><div style="font-size: 14pt;margin-left: 0%;">統計離群值 Outlier(圖二十一)</div>
+        </div></div>
+    <div style="clear: both;"></div>
+    <br><br><br>
+</div>
+
+<div >
+<section id="aa9"><span class="SG">3.&nbsp;複合模型</span></section>
+<section id="aa10"><div class="SSG">(方案一) : 用以處理一整排壞掉的圖片。</div></section>
+<img src="c12.png" style="display:block; margin:auto;width:35%; height:auto;margin-left:20%;"/>
+<div style="font-size: 14pt;margin-left: 34%;">圖二十二</div><br>
+<div class="SSG">Step1.計算太陽光電板每排的平均亮度</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同片同排取平均。</div>
+<div class="SSG">Step2.計算同片太陽光電板中與其他排平均亮度的差</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同片中不同排的差(當前-其他)，將計算出來的差取平均來判斷是否超出界線。</div>
+<div class="SSG">Step3.判斷是否超出界線</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;界線:<span style="color: red;">0.185</span>*(當前圖片的最大亮度-最小亮度)，<span style="color: red;">0.185</span>為從10張的圖，以異常點的亮度正規化後所決定出的倍率，從下圖中可以得知倍率通常都會大於0.17，但是發現0.17的界線太低導致特異度太低，經過調整後我們認為<span style="color: red;">0.185</span>效果最佳。</div>
+<img src="c14.png" style="display:block;width:25%; height:auto;margin-left: 20%;"/>
+<div  style="font-size: 14pt;margin-left:30%;">圖二十三</div><br>
+<div class="SSG">方案一結果</div>
+<img src="c15.png" style="display:block; margin-left: 20%;width:15%; height:auto;"/><div style="font-size: 14pt;margin-left: 24.5%;">圖二十四</div><br>
+<br></div>
+<br>
+
+<div style="background-color: #E8E8D0;">
+<section id="aa11"><div class="SSG" style="margin-right: 250px;">
+(方案二) : 利用ROC計算各圖的最佳界線去獲取統計離群的最佳倍率用以預測各殘差的結果，再以所有結果的總和計算各指標。
+</div></section>
+<div class="SSG">Step1.獲取離群值「最終倍率」</div>
+<div class="inside">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;各圖片倍率由獲取ROC最佳界線、Q3以及IQR推導出，將所有倍率大於1.5改為1.5，然後取平均後得出<span style="color: red;">最終倍率</span>。(圖二十六)</div>
+<div class="inside">界線:Q3+<span style="color: red;">最終倍率</span>*IQR</div>
+
+<img src="c16.png" style="display:block; margin-left: 20%;width:30%; height:auto;"/>
+<div style="font-size: 14pt;margin-left: 32%;">圖二十六</div><br>
+<div  class="SSG">Step2.ROC+統計離群預測結果</div>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6個殘差分別與ROC+統計離群異常值檢測方法的結果</div>
+<img src="c24.png" style="display:block; margin-left: 20%;width:40%; height:auto;"/>
+<div style="font-size: 14pt;margin-left:37% ;">圖二十七</div><br>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    將上面六個預測結果加總，計算加總結果「大於等於 i」的各項指標。預測結果總和大於等於3的敏感度與特異度較為平衡。</div>
+<img src="out.png" style="display:block; margin-left: 20%;width:60%; height:auto;"/>
+<div style="font-size: 14pt;margin-left:47.2% ;">圖二十八</div><br>
+<br>
+<br>
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由上圖結果可得知平衡點不一定為最佳結果，所以優化敏感度與特異度綜合指標，將敏感度與特異度分開觀察找到較佳的兩個閥值，抓取兩個閥值之間的資料放入新的模型，去比較結果。
+   
+</div>
+<!--<div style="width: 100%;" >
+    <div style="float: left; width: 47.5%;">
+        <img src="c27.png" style="display:block; margin:auto;width:50%; height:auto;"/><div  align="center" style="font-size: 18pt;">圖二十九</div></div>
+    <div style="float: right; width: 52.5%;">
+        <img src="c21.png" style="display:block; margin:auto;width:50%; height:auto;"/><div  align="center" style="font-size: 18pt;">圖三十</div>
+    </div></div>
+<div style="clear: both;"></div>-->
+<br>
+<div style="margin-left: 250px;">
+    <img src="c27.png" style="width:25%; height:auto;margin-right: 10px;"/>
+    <img src="kkk.png" style="width:25%; height:auto;position: relative; top: -100px;"/>
+    <img src="c21.png" style="width:27.5%; height:auto;"/>
+</div>
+<div style="font-size: 14pt;"><span style="margin-left: 25% ;font-size: 14pt;">圖二十九</span>
+    <span style="margin-left: 40% ;margin-right: 180px;font-size: 14pt;">圖三十</span></div>
+    <br>
+    <br>
+<div class="SSG">
+    接續(方案二)</div>
+<div class="SSG">Step3.篩選資料，觀察敏感度與特異度</div>
+<div class="inside">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;從圖二十九中我們先看敏感度可發現i等於1、2敏感度差不多，但從1到2特異度並未提升很多，所以我們以敏感度較高的i等於1當作其中一個閥值，接著觀察特異度能發現i從3以上特異度的值皆為0.99以上，但從敏感度可發現4與5之間有明顯落差，所以取i等於4當作另一個閥值。ROC+統計離群異常值檢測的預測結果總和，小於等於1預測為0，大於等於4預測為1，2~3改用其他模型預測。
+</div>
+<img src="out2.png" style="display:block; margin-left: 20%;width:60%; height:auto;"/>
+<div style="font-size: 14pt;margin-left: 47.3%;">圖三十一</div><br>
+<div  class="SSG">方案二整合結果</div>
+
+<div class="inside">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    選用孤立森林預測結果加總大於等於1，且與ROC保留的結果彙整，作為調整後case2的最終結果。
+</div>
+<img src="IF.png" style="display:block; margin-left: 20%;width:60%; height:auto;"/>
+<div style="font-size: 14pt;margin-left: 47.3%;">圖三十二</div>
+<div class="SSG">原case2的結果</div>
+<img src="case2.png" style="display:block; margin-left: 20%;width:20%; height:auto;"/>
+<div style="font-size: 14pt;margin-left: 27.5%;">圖三十三</div>
+<br><br><br>
+</div>
+<div><br>
+    <section id="aa12"><span class="SG">4.&nbsp;各模型最佳結果</span></section><br><br>
+
+<div style="width: 100%;" >
+    <div style="float: left; width: 50%;">
+        <div style="padding: 5px;margin-left: 250px;font-size: 22pt;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            I.單一模型結果(使用調整亮度後的移動中位數殘差+統計離群的異常值檢測)</div>
+        </div>
+        <div style="float: right; width: 50%;">
+            <div style="padding: 5px;font-size: 22pt;margin-right: 250px;line-height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                II.複合模型結果(將方案一和調整後方案二結果整合，計算最終結果)
+            </div>
+            
+
+        </div>
+<div style="clear: both;"></div>
+
+</div>
+
+<div style="width: 100%;" >
+    <div style="float: left; width: 50%;">
+<img src="pf1.png" style="display:block;width:30%; height:auto; margin-left: 53%;"/><div style="font-size: 14pt;margin-left: 62.5%;">圖三十四</div>
+</div>
+<div style="float: right; width: 50%;">
+<img src="case1.png" style="display:block; margin-left: 15%;width:30%; height:auto;"/><div  style="font-size: 14pt;margin-left: 24%;">圖三十五</div>
+</div>
+<div style="clear: both;"></div>
+<br>
+<br>
+
+
+    <section id="aa13" style="background-color:#E8E8D0">
+        <div  align="center" style="font-size: 32pt;color: lightcoral;"> 結論與討論
+        </div>
+        <br>
+        <br>
+  </section>
+<div style="background-color:#E8E8D0">
+  <div  class="G"> 結論:</div>
+  <div  class="SSG" style="margin-right: 250px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;從前面的結果可得知，我們採用先做整排太陽光電板壞掉的預測再使用ROC配合統計離群的檢測與孤立森林的模型去預測單個壞掉的的效果是目前最佳的預測方式，其準確率約為99.1%，敏感度約為91.3%，特異度約為99.1%。資料在分析完後是可以回推初始位置利於太陽光電板維修。影像中有因其他因素導致損壞，而導致熱班效應不明顯，所以無法準確預測。
+</div><br>
+<div  class="G"> 討論:</div>
+<div  class="SSG" style="margin-right: 250px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我們使用平均亮度與異常值檢測的方式來解決熱斑效應的問題，觀察到此方法抓到的點有不少亮度的確明顯過高的，但卻還沒被標記成異常的點，我們懷疑這些點可能是即將損毀，只是還沒到達臨界值。
+</div>
+<img src="666.png" style="display:block; margin:auto;width: 25%; height:auto;"/>
+<div align="center" style="font-size: 14pt;">圖三十六</div>
+<br><br>
+<div  class="G">研究限制:</div>
+<div  class="SSG">無法解決前面中所介紹的影像異常問題的種類中類型三的問題如下圖影像問題。</div>
+<img src="limit.png" style="display:block; margin:auto;width: 7%; height:auto;"/>
+<div align="center" style="font-size: 14pt;">圖三十七</div>
+<br><br>
+</div>
+
+<section id="aa14" >
+    <div  align="center" style="font-size: 32pt;color: lightcoral;">參考文獻</div>
+    <br><br>
+    <ol>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://zh.wikipedia.org/zh-tw/%E7%A7%BB%E5%8B%95%E5%B9%B3%E5%9D%87">https://zh.wikipedia.org/zh-tw/%E7%A7%BB%E5%8B%95%E5%B9%B3%E5%9D%87</a>&emsp;(維基百科:移動平均概念)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://www.ig.com/en/glossary-trading-terms/moving-average-definition">https://www.ig.com/en/glossary-trading-terms/moving-average-definition</a>&emsp;(MA定義)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://www.investopedia.com/terms/m/movingaverage.asp">https://www.investopedia.com/terms/m/movingaverage.asp</a>&emsp;(MA使用實例參考)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://fxlittw.com/what-is-moving-average">https://fxlittw.com/what-is-moving-average</a>&emsp;(移動平均線MA:指標介紹)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://zh.wikipedia.org/zh-tw/%E5%BC%82%E5%B8%B8%E5%80%BC">https://zh.wikipedia.org/zh-tw/%E5%BC%82%E5%B8%B8%E5%80%BC</a>&emsp;(維基百科:異常值概念)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://neptune.ai/blog/k-means-clustering">https://neptune.ai/blog/k-means-clustering</a>&emsp;(k-means分群:程式碼參考&概念)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://ithelp.ithome.com.tw/articles/10209058">https://ithelp.ithome.com.tw/articles/10209058</a>&emsp;(k-means分群演算法:程式碼參考)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://rstudio-pubs-static.s3.amazonaws.com/378455_ddbefe5075b941d1a1f6a1bf9cf1e85f.html">https://rstudio-pubs-static.s3.amazonaws.com/378455_ddbefe5075b941d1a1f6a1bf9cf1e85f.html</a>&emsp;(k-means在R使用:模型程式碼參考)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://chih-sheng-huang821.medium.com/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E9%9B%86%E7%BE%A4%E5%88%86%E6%9E%90-k-means-clustering-e608a7fe1b43">https://chih-sheng-huang821.medium.com/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E9%9B%86%E7%BE%A4%E5%88%86%E6%9E%90-k-means-clustering-e608a7fe1b43</a>&emsp;(k-means集群分析:概念圖解)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://www.gss.com.tw/blog/%E9%9B%A2%E7%BE%A4%E5%80%BC%E4%B9%8B%E7%B0%A1%E4%BB%8B">https://www.gss.com.tw/blog/%E9%9B%A2%E7%BE%A4%E5%80%BC%E4%B9%<br>8B%E7%B0%A1%E4%BB%8B</a>&emsp;(離群值簡介)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E5%B7%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C">https://zh.wikipedia.org/wiki/%E4%BA%BA%E5%B7%A5%E7%A5%9E%E7%BB%<br>8F%E7%BD%91%E7%BB%9C</a>&emsp;(維基百科:人工神經網絡)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://aws.amazon.com/tw/what-is/neural-network/">https://aws.amazon.com/tw/what-is/neural-network/</a>&emsp;(Amazon Web Services什麽是神經網路)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://ithelp.ithome.com.tw/articles/10273094">https://ithelp.ithome.com.tw/articles/10273094</a>&emsp;(機器學習常勝軍—XGBoost)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://ithelp.ithome.com.tw/articles/10301273">https://ithelp.ithome.com.tw/articles/10301273</a>&emsp;(ML機器學習: XGBoost基本介紹&實作)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://cyeninesky3.medium.com/oneclass-svm-%E7%95%B0%E5%B8%B8%E6%AA%A2%E6%B8%AC%E4%BB%BB%E5%8B%99-anomaly-detection-%E7%9A%84%E7%AE%97%E6%B3%95%E7%90%86%E8%A7%A3%E8%88%87%E5%AF%A6%E8%B8%90-cf5f0bbb01c0">https://cyeninesky3.medium.com/oneclass-svm-%E7%95%B0%E5%B8%B8%E6%AA%A2%E6%B8%AC%E4%BB%BB%E5%8B%99-anomaly-detection-%E7%9A%84%E7%AE%97%E6%B3%95%E7%90%86%E8%A7%A3%E8%88%<br>87%E5%AF%A6%E8%B8%90-cf5f0bbb01c0</a>&emsp;(SVM：異常檢測任務)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://zhuanlan.zhihu.com/p/74508141">https://zhuanlan.zhihu.com/p/74508141</a>&emsp;(異常檢測算法—孤立森林Isolation Forest)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://blog.csdn.net/BigData_Mining/article/details/102914342">https://blog.csdn.net/BigData_Mining/article/details/102914342</a>&emsp;(異常檢測算法之局部異常因子算法—Local OutlierFactor)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://zhuanlan.zhihu.com/p/28178476">https://zhuanlan.zhihu.com/p/28178476</a>&emsp;(機器學習-異常檢測算法（二）：Local Outlier Factor)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://chtseng.wordpress.com/2016/12/05/opencv-edge-detection%E9%82%8A%E7%B7%A3%E5%81%B5%E6%B8%AC/">https://chtseng.wordpress.com/2016/12/05/opencv-edge-detection%E9%82%8A%E7%B7%A3%E5%81%B5%E6%B8%AC/</a>&emsp;(OPENCV-Edge detection邊緣偵測)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://www.epochtimes.com/b5/11/12/19/n3462022.htm">https://www.epochtimes.com/b5/11/12/19/n3462022.htm</a>&emsp;(新聞：裝太陽能板踩空5樓高墜下命危)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;"><a href="https://data.gov.tw/dataset/17140">https://data.gov.tw/dataset/17140</a>&emsp;(台灣電力公司＿風力及太陽光電發電量資料)</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;">Michal H.Kutner·Chrisropher J.Nachtsheim、John Neter(2004)·Applied Linear Regression Models Fourth Edition</li>
+        <li style="margin-left: 20%;font-size: 18pt;margin-right: 20%;margin-bottom: 20px;">黃秋杰與張偉政（2022）。深度學習在太陽光電模組的熱影像缺陷自動辨別系統</li>
+    </ol>
+        <br>
+</section>
+<br><br>
+</div>
+<div style="background-color:#E8E8D0;"><br><br><br>
+<div style="text-align: center;">
+    <a href="handmake.html" style="font-size: 30pt; margin-bottom: 20px;">進入預測結果</a>
+  </div>
+<br>
+<br>
+<!--<a  href="https://docs.google.com/document/d/1KgPF6WFcsU-5Cg_iJ6MXoSd-QczxdsUAbjGyyTSxFUg/edit?usp=sharing"><img align="center" src="paper.png" alt="詳細文檔" style= " height: 400px;width: 400px;margin-left: 559px;"></a>
+<div align="center" style="font-size: 24pt; font-weight: bold;">詳細文檔</div>-->
+<br><br></div>
+  <div class="footer">
+    <p style="margin-left: 100px;">版權所有 © 2024</p>
+    <p style="margin-left: 100px;">建議使用網頁板</p>
+  </div>
+    </body>
+</html>

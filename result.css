@@ -1,0 +1,16 @@
+.myElement {
+  position: fixed; /* 讓元素填滿整個頁面*/ 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #ADD8E6 url('result1.gif') no-repeat center center; /* 設定背景顏色和GIF圖片 */
+  background-size: 50%; /* 調整GIF圖片的大小 */
+  animation: fadeInOut 9s linear forwards; /* 定義動畫*/ 
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
